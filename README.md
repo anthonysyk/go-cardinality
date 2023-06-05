@@ -5,6 +5,23 @@ go-cardinality is a Go library that calculates the cardinality and distinct coun
 - Retrieve all unique values of a specific field in a dataset, which is useful for creating enums or generating dimension tables.
 - Analyze the distribution of values within a particular field in a dataset to gain insights into the most frequently occurring values.
 
+```go
+fields, errs := naive.DistinctCount(Movie{}, movies, "Year", "Genres")
+genres, err := fields.GetField("Genres")
+genres.PrettyPrint()
+```
+```text
+Comedy = 350
+Drama = 338
+Thriller = 194
+Horror = 162
+Action = 162
+Romance = 117
+...
+```
+
+Check examples here : [Examples](example/README.md)
+
 # Progress
 
 ## Features
