@@ -2,6 +2,7 @@ package example
 
 import (
 	_ "embed"
+	"encoding/json"
 )
 
 //go:embed movies.json
@@ -17,4 +18,13 @@ type Movie struct {
 	Thumbnail       string   `json:"thumbnail"`
 	ThumbnailWidth  int      `json:"thumbnail_width"`
 	ThumbnailHeight int      `json:"thumbnail_height"`
+}
+
+func GetMovies() ([]Movie, error) {
+	var movies []Movie
+	err := json.Unmarshal(MoviesJson, &movies)
+	if err != nil {
+		return nil, err
+	}
+	return movies, nil
 }

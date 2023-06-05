@@ -37,6 +37,16 @@ Check examples here : [Examples](example/README.md)
 - [ ] Type []string
 - [ ] Type []int
 
+## Tests
+- Run unit tests
+```shell
+make test
+```
+- Run benchmark tests
+```shell
+make bench
+```
+
 # Considerations
 - Usage of reflect library : even if greatly discouraged, we needed to use it (moderately) to build generic methods based on struct fields and types (schema).
 

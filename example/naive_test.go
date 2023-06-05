@@ -1,15 +1,13 @@
 package example
 
 import (
-	"encoding/json"
 	"github.com/anthonysyk/go-cardinality/internal/naive"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
 func TestDistinctCountNaive(t *testing.T) {
-	var movies []Movie
-	err := json.Unmarshal(MoviesJson, &movies)
+	movies, err := GetMovies()
 	assert.NoError(t, err)
 	fields := naive.DistinctCount(Movie{}, movies, "Year", "Genres")
 	years, err := fields.GetField("Year")

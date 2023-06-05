@@ -6,7 +6,7 @@ import (
 )
 
 func TestMapToEnum(t *testing.T) {
-	m := map[string]int{
+	m := map[interface{}]int{
 		"Action":    162,
 		"Adventure": 43,
 		"Animated":  79,
