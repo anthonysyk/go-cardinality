@@ -3,7 +3,7 @@
 ## Usage
 
 ```go
-fields, errs := naive.DistinctCount(Movie{}, movies, "Year", "Genres")
+fields := naive.DistinctCount(Movie{}, movies, "Year", "Genres")
 genres, err := fields.GetField("Genres")
 genres.PrettyPrint()
 ```

@@ -73,3 +73,12 @@ func TestGetValue(t *testing.T) {
 		})
 	}
 }
+
+func TestIsSlice(t *testing.T) {
+	assert.Equal(t, true, IsSlice([]string{"string1", "string2"}))
+	assert.Equal(t, true, IsSlice([]int{2020, 2021}))
+	assert.Equal(t, true, IsSlice([]interface{}{"sun", "sky", 1, 3}))
+
+	assert.Equal(t, false, IsSlice(2020))
+	assert.Equal(t, false, IsSlice("moon"))
+}

@@ -6,7 +6,7 @@ go-cardinality is a Go library that calculates the cardinality and distinct coun
 - Analyze the distribution of values within a particular field in a dataset to gain insights into the most frequently occurring values.
 
 ```go
-fields, errs := naive.DistinctCount(Movie{}, movies, "Year", "Genres")
+fields := naive.DistinctCount(Movie{}, movies, "Year", "Genres")
 genres, err := fields.GetField("Genres")
 genres.PrettyPrint()
 ```
@@ -26,16 +26,17 @@ Check examples here : [Examples](example/README.md)
 
 ## Features
 
-- [ ] Naive approach using a map data structure
+- [x] Naive approach using a map data structure
 - [ ] Naive approach with concurrent processing for improved performance
+- [ ] Naive approach with RxGo
 - [ ] API for calculating cardinality in a list of objects
 - [ ] Use HyperLogLog algorithm for accurate estimation of distinct values
 
 ## Types implemented
-- [ ] Type int
-- [ ] Type string
-- [ ] Type []string
-- [ ] Type []int
+- [x] Type `int`
+- [x] Type `string`
+- [x] Type `[]string`
+- [x] Type `[]int`
 
 ## Tests
 - Run unit tests
@@ -45,6 +46,10 @@ make test
 - Run benchmark tests
 ```shell
 make bench
+```
+- Run coverage
+```shell
+make coverage
 ```
 
 # Considerations

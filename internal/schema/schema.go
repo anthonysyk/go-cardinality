@@ -4,7 +4,7 @@ import (
 	"reflect"
 )
 
-func GetValue(e interface{}, field string) interface{} {
+func getValue(e interface{}, field string) interface{} {
 	r := reflect.ValueOf(e)
 	value := reflect.Indirect(r).FieldByName(field)
 

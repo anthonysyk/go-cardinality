@@ -34,7 +34,7 @@ func (f *Field) AddValues(value interface{}) {
 }
 
 func (f *Field) GetValue(e interface{}) interface{} {
-	return GetValue(e, f.Name)
+	return getValue(e, f.Name)
 }
 
 func (f *Field) PrettyPrint() {
